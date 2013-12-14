@@ -1,5 +1,4 @@
 ActiveAdmin.register MobilePlatform do
-
   index do
     column :name
     column :available do |mp|

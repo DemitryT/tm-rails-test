@@ -1,6 +1,7 @@
 ActiveAdmin.register AdminUser do
   index do
     column :email
+    column :role
     column :current_sign_in_at
     column :last_sign_in_at
     column :sign_in_count
@@ -12,8 +13,7 @@ ActiveAdmin.register AdminUser do
   form do |f|
     f.inputs "Admin Details" do
       f.input :email
-      f.input :password
-      f.input :password_confirmation
+      f.input :role, label: 'Role', as: :select, collection: AdminUser::ROLES.map{|u| [u, u]}
     end
     f.actions
   end

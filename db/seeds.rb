@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# Create the initial mobile platforms
 ["Android", "iOS"].each do |mobile_platform|
   MobilePlatform.where(name: mobile_platform).first_or_create!
 end
+
+# Create a new campaign manager
+AdminUser.create!(email: 'cm@example.com', password: 'password', password_confirmation: 'password', role: "campaign_manager")
