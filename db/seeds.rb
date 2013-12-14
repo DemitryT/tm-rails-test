@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+["Android", "iOS"].each do |mobile_platform|
+  MobilePlatform.where(name: mobile_platform).first_or_create!
+end

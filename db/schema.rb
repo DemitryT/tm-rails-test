@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130917065950) do
+ActiveRecord::Schema.define(:version => 20131214165115) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -51,6 +51,23 @@ ActiveRecord::Schema.define(:version => 20130917065950) do
     t.integer  "budget"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "mobile_campaigns", :force => true do |t|
+    t.integer  "campaign_id"
+    t.integer  "mobile_platform_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "mobile_campaigns", ["campaign_id"], :name => "index_mobile_campaigns_on_campaign_id"
+  add_index "mobile_campaigns", ["mobile_platform_id"], :name => "index_mobile_campaigns_on_mobile_platform_id"
+
+  create_table "mobile_platforms", :force => true do |t|
+    t.string   "name",                         :null => false
+    t.boolean  "available",  :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
 end
