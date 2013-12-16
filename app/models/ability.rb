@@ -13,7 +13,7 @@ class Ability
 
     # A campaign manager can do the following:
     if user.role?('campaign_manager')
-      can :manage, Campaign
+      can :manage, [Campaign, MobileCampaignVersion]
       cannot :manage, [AdminUser, MobilePlatform]
     end
 

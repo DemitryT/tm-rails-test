@@ -1,20 +1,15 @@
 ActiveAdmin.register AdminUser do
+  actions :all, :except => [:new]
+
   index do
     column :email
-    column :role
+    column :role do |au|
+      au.role.humanize
+    end
     column :current_sign_in_at
     column :last_sign_in_at
     column :sign_in_count
-    default_actions
   end
 
   filter :email
-
-  form do |f|
-    f.inputs "Admin Details" do
-      f.input :email
-      f.input :role, label: 'Role', as: :select, collection: AdminUser::ROLES.map{|u| [u, u]}
-    end
-    f.actions
-  end
 end

@@ -14,5 +14,4 @@ class Campaign < ActiveRecord::Base
   def has_at_least_one_platform?
     errors.add(:base, 'A campaign must have at least one mobile platform') if self.mobile_platforms.blank?
   end
-
 end

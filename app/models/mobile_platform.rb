@@ -6,5 +6,4 @@ class MobilePlatform < ActiveRecord::Base
   attr_accessible :name, :available
 
   validates :name, presence: true
-
 end

@@ -1,3 +1,11 @@
+GIT
+  remote: git@github.com:DemitryT/paper_trail.git
+  revision: c4e188c27040888515866660bac94740b92a262b
+  specs:
+    paper_trail (3.0.0)
+      activerecord (>= 3.0, < 5.0)
+      activesupport (>= 3.0, < 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -153,6 +161,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails (~> 2.3.0)
   meta_search (>= 1.1.0.pre)
+  paper_trail!
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
   sqlite3
