@@ -212,7 +212,5 @@ ActiveAdmin.setup do |config|
   # http://www.activeadmin.info/docs/13-authorization-adapter.html#managing_access_to_pages
   #
   config.authorization_adapter = ActiveAdmin::CanCanAdapter
-  # Prevent a redirect loop that can happen if a user tries to access a page they don’t have permissions for
-  config.on_unauthorized_access = :access_denied
 
 end
